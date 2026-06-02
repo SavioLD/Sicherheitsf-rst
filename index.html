@@ -5,27 +5,21 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Fürst Metallbau Rottweil · Der Fürst Ihrer Sicherheit</title>
 <meta name="description" content="Karl-Georg Fürst Metallbau in Rottweil. Seit 1953 Ihr Partner für Sicherheit, Metall- und Edelstahlbau, Schließanlagen, Geländer, Treppen, Tore und Türen." />
-<meta name="theme-color" content="#0a0a0a" />
+<meta name="theme-color" content="#ffffff" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Archivo:wght@600;700;800;900&family=Caveat:wght@600;700&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Archivo:wght@500;600;700;800;900&display=swap" rel="stylesheet" />
 
 <style>
 :root{
   --bg:#ffffff;
-  --bg-soft:#fafaf7;
   --ink:#0a0a0a;
-  --ink-soft:#222;
-  --muted:#555;
-  --line:#e5e5e5;
-  --line-2:#111;
+  --ink-soft:#2a2a2a;
+  --muted:#6b6b6b;
+  --muted-2:#9a9a9a;
+  --line:#ececec;
   --yellow:#ffe000;
-  --yellow-deep:#f5d500;
-  --radius:14px;
-  --shadow-sm:0 1px 2px rgba(0,0,0,.06),0 4px 14px rgba(0,0,0,.06);
-  --shadow-md:0 12px 32px rgba(0,0,0,.12);
-  --shadow-lg:0 24px 70px rgba(0,0,0,.22);
 }
 
 *{box-sizing:border-box}
@@ -33,368 +27,278 @@ html{scroll-behavior:smooth}
 body{
   margin:0;
   font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
-  font-size:17px;line-height:1.6;color:var(--ink);background:var(--bg);
+  font-size:17px;line-height:1.65;color:var(--ink);background:var(--bg);
   -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
 }
 img,svg{max-width:100%;display:block}
 a{color:inherit;text-decoration:none}
-h1,h2,h3,h4{font-family:'Archivo',sans-serif;font-weight:800;letter-spacing:-.02em;line-height:1.08;margin:0 0 .5em;color:var(--ink)}
-h1{font-size:clamp(2.6rem,6vw,5.2rem);font-weight:900;letter-spacing:-.035em}
+h1,h2,h3,h4{font-family:'Archivo',sans-serif;font-weight:800;letter-spacing:-.025em;line-height:1.08;margin:0 0 .5em;color:var(--ink)}
+h1{font-size:clamp(2.6rem,6.4vw,5.6rem);font-weight:800;letter-spacing:-.04em;line-height:1}
 h2{font-size:clamp(2rem,4vw,3.2rem);font-weight:800}
-h3{font-size:1.25rem;font-weight:700;letter-spacing:-.01em}
+h3{font-size:1.2rem;font-weight:700;letter-spacing:-.01em}
 p{margin:0 0 1em}
 strong{font-weight:700}
-em{font-style:normal;background:var(--yellow);padding:0 4px;border-radius:2px;color:var(--ink)}
 
-.shell{max-width:1240px;margin:0 auto;padding:0 28px}
+.shell{max-width:1280px;margin:0 auto;padding:0 32px}
 
+/* ===== Eyebrow (small yellow horizontal bar + label) ===== */
 .eyebrow{
-  display:inline-flex;align-items:center;gap:10px;
-  font-size:.78rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--ink);
-  margin-bottom:18px;
+  display:inline-flex;align-items:center;gap:14px;
+  font-size:.74rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--ink);
+  margin-bottom:24px;
 }
-.eyebrow::before{content:"";width:32px;height:3px;background:var(--yellow);display:inline-block}
+.eyebrow::before{content:"";width:48px;height:4px;background:var(--yellow)}
 .eyebrow--light{color:#fff}
-.eyebrow--light::before{background:var(--yellow)}
 
-/* ===== Buttons ===== */
+/* ===== Buttons (flat, minimal) ===== */
 .btn{
   display:inline-flex;align-items:center;justify-content:center;gap:10px;
-  padding:15px 26px;border-radius:0;border:2px solid var(--ink);
-  background:var(--ink);color:#fff;font-weight:700;font-size:.95rem;letter-spacing:.04em;text-transform:uppercase;
-  cursor:pointer;transition:transform .15s ease,box-shadow .15s ease,background .15s ease,color .15s ease;
-  white-space:nowrap;
+  padding:14px 24px;border:0;border-radius:0;cursor:pointer;
+  font-family:'Archivo',sans-serif;font-weight:700;font-size:.88rem;letter-spacing:.08em;text-transform:uppercase;
+  transition:background .15s ease,color .15s ease,transform .15s ease;
 }
-.btn svg{width:18px;height:18px}
-.btn:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--yellow)}
-.btn--yellow{background:var(--yellow);color:var(--ink);border-color:var(--ink)}
-.btn--yellow:hover{box-shadow:6px 6px 0 var(--ink);background:var(--yellow)}
-.btn--ghost{background:transparent;color:var(--ink);border-color:var(--ink)}
-.btn--ghost:hover{background:var(--ink);color:#fff;box-shadow:6px 6px 0 var(--yellow)}
-.btn--light{background:#fff;color:var(--ink);border-color:#fff}
-.btn--light:hover{box-shadow:6px 6px 0 var(--yellow)}
-.btn--outline-light{background:transparent;color:#fff;border-color:#fff}
-.btn--outline-light:hover{background:var(--yellow);color:var(--ink);border-color:var(--yellow);box-shadow:6px 6px 0 #fff}
-.btn--lg{padding:18px 32px;font-size:1rem}
+.btn svg{width:16px;height:16px}
+.btn--yellow{background:var(--yellow);color:var(--ink)}
+.btn--yellow:hover{background:var(--ink);color:#fff}
+.btn--dark{background:var(--ink);color:#fff}
+.btn--dark:hover{background:var(--yellow);color:var(--ink)}
+.btn--text{background:transparent;color:var(--ink);padding:14px 0;gap:8px}
+.btn--text::after{content:"";width:0;height:2px;background:var(--ink);transition:width .2s ease;position:absolute;bottom:8px;left:0}
+.btn--text{position:relative}
+.btn--text:hover::after{width:100%}
+.btn--lg{padding:18px 32px;font-size:.92rem}
 
-/* ===== LOGO (SVG inline) ===== */
-.logo{display:block;width:74px;height:74px;flex:0 0 auto}
-.logo--lg{width:96px;height:96px}
-.logo--sm{width:54px;height:54px}
+/* ===== Logo (text-only with thin yellow underline) ===== */
+.logo{display:inline-flex;flex-direction:column;align-items:flex-start;line-height:1}
+.logo__main{font-family:'Archivo',sans-serif;font-weight:900;font-style:italic;font-size:1.6rem;letter-spacing:-.02em;color:var(--ink)}
+.logo__bar{width:100%;height:3px;background:var(--yellow);margin:4px 0 3px}
+.logo__sub{font-family:'Archivo',sans-serif;font-weight:700;font-size:.62rem;letter-spacing:.32em;color:var(--ink)}
 
 /* ===== NAV ===== */
-.nav{
-  position:sticky;top:0;z-index:50;
-  background:#fff;
-  border-bottom:4px solid var(--yellow);
-}
-.nav__top{display:flex;align-items:stretch;justify-content:space-between;gap:24px;min-height:84px}
-.nav__brand{display:flex;align-items:center;gap:14px;padding:10px 0}
-.nav__brand-text{display:flex;flex-direction:column;line-height:1.05;font-family:'Archivo',sans-serif;font-weight:800;font-size:1.05rem;letter-spacing:.01em}
-.nav__brand-text span{font-size:.7rem;color:var(--muted);font-weight:600;letter-spacing:.18em;text-transform:uppercase;margin-top:3px}
-.nav__links{display:flex;align-items:stretch}
+.nav{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid var(--line)}
+.nav__top{display:flex;align-items:center;justify-content:space-between;gap:32px;height:88px}
+.nav__links{display:flex;align-items:center;gap:36px}
 .nav__links a{
-  display:flex;align-items:center;padding:0 18px;
-  color:var(--ink);font-size:.82rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
-  border-top:4px solid transparent;border-bottom:4px solid transparent;
-  transition:border-color .15s ease,background .15s ease;
-  position:relative;
+  position:relative;padding:8px 0;
+  color:var(--ink);font-size:.82rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;
 }
-.nav__links a:hover{border-bottom-color:var(--yellow)}
-.nav__links a.is-active{background:var(--yellow);border-bottom-color:var(--ink)}
-.nav__cta{display:flex;align-items:center;gap:12px}
-.nav__phone{color:var(--ink);font-weight:800;font-size:1rem;display:flex;align-items:center;gap:8px;font-family:'Archivo',sans-serif}
-.nav__phone svg{width:18px;height:18px}
-.burger{display:none;background:none;border:0;width:48px;height:48px;cursor:pointer;align-items:center;justify-content:center;flex-direction:column;gap:5px}
-.burger span{display:block;width:24px;height:3px;background:var(--ink)}
+.nav__links a::after{
+  content:"";position:absolute;left:0;right:0;bottom:-32px;height:4px;background:transparent;transition:background .15s ease;
+}
+.nav__links a:hover::after,.nav__links a.is-active::after{background:var(--yellow)}
+.nav__cta{display:flex;align-items:center;gap:20px}
+.nav__phone{display:flex;align-items:center;gap:10px;font-family:'Archivo',sans-serif;font-weight:700;font-size:.98rem;color:var(--ink)}
+.nav__phone svg{width:16px;height:16px;color:var(--muted)}
+.burger{display:none;background:none;border:0;width:44px;height:44px;cursor:pointer;flex-direction:column;justify-content:center;align-items:center;gap:5px}
+.burger span{display:block;width:22px;height:2px;background:var(--ink)}
 
 /* ===== HERO ===== */
-.hero{position:relative;overflow:hidden;background:#fff;padding:80px 0 100px}
-.hero::before{
-  content:"";position:absolute;top:0;right:-200px;width:760px;height:760px;
-  background:var(--yellow);transform:rotate(18deg);z-index:0;
-  border-radius:48px;
+.hero{background:#fff;padding:110px 0 140px;position:relative}
+.hero__inner{display:grid;grid-template-columns:1fr;max-width:1100px}
+.hero h1{margin:18px 0 32px;max-width:14ch}
+.hero h1 .yellow-wipe{
+  display:inline-block;background:var(--yellow);padding:.02em .12em;line-height:1;
 }
-.hero::after{
-  content:"";position:absolute;inset:0;
-  background-image:
-    linear-gradient(rgba(0,0,0,.04) 1px,transparent 1px),
-    linear-gradient(90deg,rgba(0,0,0,.04) 1px,transparent 1px);
-  background-size:48px 48px;
-  mask-image:linear-gradient(180deg,#000 30%,transparent 90%);
-  -webkit-mask-image:linear-gradient(180deg,#000 30%,transparent 90%);
-  pointer-events:none;z-index:0;
+.hero__sub{color:var(--muted);max-width:620px;font-size:1.18rem;margin:0 0 44px;line-height:1.55}
+.hero__sub strong{color:var(--ink);font-weight:600}
+.hero__cta{display:flex;gap:24px;flex-wrap:wrap;align-items:center}
+.hero__meta{
+  margin-top:96px;padding-top:32px;border-top:1px solid var(--line);
+  display:grid;grid-template-columns:repeat(4,1fr);gap:32px;
 }
-.hero__inner{position:relative;display:grid;grid-template-columns:1.2fr .8fr;gap:64px;align-items:center;z-index:1}
-
-.hero__kicker{
-  display:inline-flex;align-items:center;gap:12px;
-  background:var(--ink);color:#fff;padding:8px 16px;
-  font-size:.78rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;
-  margin-bottom:28px;
-}
-.hero__kicker .dot{width:8px;height:8px;background:var(--yellow);border-radius:50%}
-.hero h1{margin-bottom:14px}
-.hero h1 .mark{
-  background:var(--yellow);padding:0 .15em;display:inline-block;
-  box-shadow:inset 0 -.08em 0 rgba(0,0,0,.15);
-}
-.hero h1 .strike-through{position:relative;display:inline-block}
-.hero h1 .strike-through::before{
-  content:"";position:absolute;left:-5%;right:-5%;top:50%;height:18px;background:var(--yellow);
-  transform:translateY(-50%) rotate(-2deg);z-index:-1;
-}
-.hero__leidenschaft{
-  margin-top:0;font-family:'Archivo',sans-serif;font-weight:700;
-  font-size:clamp(1.1rem,1.6vw,1.35rem);max-width:600px;line-height:1.35;color:var(--ink);
-}
-.hero__leidenschaft .quote-mark{color:var(--ink);font-family:'Archivo',sans-serif;font-weight:900;font-size:1.4em;line-height:0;vertical-align:-.15em;margin:0 .1em}
-.hero__sub{color:var(--muted);max-width:560px;font-size:1.05rem;margin:18px 0 32px}
-.hero__cta{display:flex;gap:14px;flex-wrap:wrap}
-.hero__meta{display:flex;gap:48px;margin-top:56px;flex-wrap:wrap;border-top:2px solid var(--ink);padding-top:28px}
 .hero__meta-item{display:flex;flex-direction:column}
-.hero__meta-item strong{font-family:'Archivo',sans-serif;font-size:2.4rem;color:var(--ink);font-weight:900;letter-spacing:-.03em;line-height:.9}
-.hero__meta-item span{color:var(--muted);font-size:.78rem;text-transform:uppercase;letter-spacing:.14em;margin-top:8px;font-weight:600}
+.hero__meta-item strong{font-family:'Archivo',sans-serif;font-size:2.2rem;font-weight:800;color:var(--ink);letter-spacing:-.03em;line-height:1}
+.hero__meta-item span{color:var(--muted);font-size:.74rem;text-transform:uppercase;letter-spacing:.16em;margin-top:10px;font-weight:600}
 
-/* Hero burst card */
-.hero__card{position:relative}
-.burst{
-  position:relative;width:100%;max-width:380px;margin:0 auto;
-  aspect-ratio:1/1;display:grid;place-items:center;
-  color:var(--ink);text-align:center;font-family:'Archivo',sans-serif;font-weight:900;
-  transform:rotate(-6deg);
+/* ===== YELLOW STRIPE (THE long horizontal bar element) ===== */
+.stripe{background:var(--yellow);color:var(--ink);padding:32px 0;overflow:hidden}
+.stripe--tall{padding:64px 0}
+.stripe__inner{display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap}
+.stripe__text{
+  font-family:'Archivo',sans-serif;font-weight:800;
+  font-size:clamp(1.2rem,2.2vw,1.7rem);letter-spacing:-.01em;line-height:1.25;
+  flex:1;min-width:280px;
 }
-.burst svg.burst__shape{position:absolute;inset:0;width:100%;height:100%;color:var(--yellow)}
-.burst__content{position:relative;padding:30px;display:flex;flex-direction:column;align-items:center;gap:10px}
-.burst__small{font-size:.78rem;letter-spacing:.22em;text-transform:uppercase;font-weight:800}
-.burst__big{font-size:clamp(1.6rem,2.3vw,2rem);line-height:.95;letter-spacing:-.02em;text-transform:uppercase;max-width:14ch}
-.burst__arrow{font-size:1.6rem;margin-top:6px}
-.burst__cta{
-  margin-top:8px;padding:8px 18px;background:var(--ink);color:#fff;
-  font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;font-weight:800;
-}
+.stripe__text em{font-style:normal;text-decoration:underline;text-decoration-thickness:3px;text-underline-offset:6px}
+.stripe__cta{flex:0 0 auto}
 
-.hero__quote{
-  position:absolute;left:-20px;bottom:-30px;max-width:340px;
-  font-family:'Caveat',cursive;font-size:1.6rem;color:var(--ink);font-weight:700;line-height:1.15;
-  transform:rotate(-3deg);
+/* Marquee-style word stripe */
+.stripe--words .stripe__inner{justify-content:center;gap:0;flex-wrap:nowrap;overflow:hidden}
+.stripe--words .word{
+  font-family:'Archivo',sans-serif;font-weight:900;font-size:clamp(1.2rem,2.3vw,1.8rem);
+  letter-spacing:.04em;text-transform:uppercase;padding:0 36px;white-space:nowrap;
+  display:inline-flex;align-items:center;gap:36px;
 }
-.hero__quote::before{content:"„";font-family:'Archivo',sans-serif;font-size:2rem;line-height:0}
-.hero__quote::after{content:"\"";font-family:'Archivo',sans-serif;font-size:2rem;line-height:0}
-
-/* ===== Brand stripe ===== */
-.brandstripe{
-  background:var(--ink);color:#fff;
-  padding:22px 0;border-top:4px solid var(--yellow);border-bottom:4px solid var(--yellow);
-  overflow:hidden;
-}
-.brandstripe__inner{
-  display:flex;gap:60px;align-items:center;justify-content:center;flex-wrap:wrap;
-  font-family:'Archivo',sans-serif;font-weight:900;font-size:1.4rem;letter-spacing:.04em;text-transform:uppercase;
-}
-.brandstripe__inner span{display:inline-flex;align-items:center;gap:60px}
-.brandstripe__inner span::after{content:"";width:14px;height:14px;background:var(--yellow);transform:rotate(45deg)}
-.brandstripe__inner span:last-child::after{display:none}
+.stripe--words .word::after{content:"";width:10px;height:10px;background:var(--ink);border-radius:50%;display:inline-block}
+.stripe--words .word:last-child::after{display:none}
 
 /* ===== Sections ===== */
-.section{padding:120px 0}
-.section--alt{background:var(--bg-soft);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.section{padding:140px 0}
+.section--narrow{padding:100px 0}
 .section--dark{background:var(--ink);color:#fff}
 .section--dark h2,.section--dark h3,.section--dark h4{color:#fff}
-.section--dark p{color:#cfcfcf}
-.section__head{max-width:820px;margin:0 auto 72px;text-align:center}
-.section__head--left{text-align:left;margin-left:0}
-.section__head p{color:var(--muted);font-size:1.12rem;margin-top:14px}
-.section--dark .section__head p{color:#cfcfcf}
-.section__head h2 .mark{background:var(--yellow);color:var(--ink);padding:0 .15em;display:inline-block}
+.section--dark p{color:#bdbdbd}
+.section--dark .eyebrow{color:#fff}
+.section__head{max-width:780px;margin:0 0 80px}
+.section__head--center{margin-left:auto;margin-right:auto;text-align:center}
+.section__head p{color:var(--muted);font-size:1.15rem;margin-top:16px}
+.section--dark .section__head p{color:#bdbdbd}
 
-/* ===== Leistungen (Lösungen) ===== */
-.services{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:2px solid var(--ink);border-left:2px solid var(--ink)}
-.service{
-  background:#fff;padding:36px 32px;position:relative;
-  border-right:2px solid var(--ink);border-bottom:2px solid var(--ink);
-  transition:background .15s ease;
-}
-.service:hover{background:var(--yellow)}
+/* ===== Services (no borders, just typography grid) ===== */
+.services{display:grid;grid-template-columns:repeat(3,1fr);gap:64px 56px}
+.service{position:relative}
 .service__num{
-  font-family:'Archivo',sans-serif;font-weight:900;font-size:1rem;letter-spacing:.16em;
-  color:var(--ink);margin-bottom:24px;
+  display:flex;align-items:center;gap:14px;
+  font-family:'Archivo',sans-serif;font-weight:700;font-size:.82rem;letter-spacing:.18em;color:var(--ink);margin-bottom:24px;
 }
-.service__num::before{content:"";display:inline-block;width:28px;height:3px;background:var(--ink);margin-right:10px;vertical-align:middle}
-.service__icon{
-  width:60px;height:60px;display:grid;place-items:center;
-  background:var(--ink);color:var(--yellow);margin-bottom:24px;
-  transition:background .15s ease,color .15s ease;
+.service__num::before{content:"";width:32px;height:4px;background:var(--yellow)}
+.service h3{margin:0 0 12px;font-size:1.32rem;letter-spacing:-.015em}
+.service p{color:var(--muted);margin:0;font-size:.98rem;line-height:1.6}
+
+/* ===== Quote (minimal) ===== */
+.quote{padding:160px 0;text-align:center;background:#fff}
+.quote blockquote{
+  margin:0 auto;max-width:920px;padding:0;
+  font-family:'Archivo',sans-serif;font-weight:700;font-size:clamp(1.6rem,3.2vw,2.6rem);
+  line-height:1.3;letter-spacing:-.015em;color:var(--ink);
 }
-.service:hover .service__icon{background:var(--ink);color:var(--yellow)}
-.service__icon svg{width:30px;height:30px}
-.service h3{margin-bottom:10px;font-size:1.35rem}
-.service p{color:var(--ink-soft);margin:0;font-size:.97rem}
+.quote blockquote .yellow-wipe{display:inline;background:var(--yellow);padding:.02em .12em}
+.quote cite{
+  display:block;margin-top:32px;font-style:normal;font-family:'Archivo',sans-serif;
+  font-size:.82rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);font-weight:600;
+}
 
 /* ===== About ===== */
-.about{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
-.about__visual{
-  position:relative;background:var(--ink);color:#fff;padding:56px;min-height:520px;
-  display:flex;flex-direction:column;justify-content:space-between;
-  box-shadow:24px 24px 0 var(--yellow);
-}
+.about{display:grid;grid-template-columns:1.2fr 1fr;gap:96px;align-items:center}
+.about__visual{position:relative;padding:0}
 .about__year{
-  font-family:'Archivo',sans-serif;font-size:clamp(6rem,12vw,10rem);font-weight:900;
-  letter-spacing:-.05em;line-height:.85;color:var(--yellow);
+  font-family:'Archivo',sans-serif;font-size:clamp(8rem,14vw,13rem);font-weight:800;
+  letter-spacing:-.07em;line-height:.85;color:var(--ink);
 }
-.about__year-sub{color:#fff;font-size:.85rem;letter-spacing:.22em;text-transform:uppercase;margin-top:12px;font-weight:600}
-.about__visual-foot p{color:#dadada;font-size:1.05rem;margin:0 0 16px;max-width:380px}
-.about__signature{font-family:'Caveat',cursive;font-weight:700;color:var(--yellow);font-size:1.6rem;display:inline-block;transform:rotate(-2deg)}
-.about__badge{
-  position:absolute;top:32px;right:32px;
-  display:flex;align-items:center;gap:10px;
-  background:var(--yellow);color:var(--ink);padding:10px 16px;
-  font-size:.75rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;
+.about__year-sub{
+  margin-top:24px;color:var(--muted);font-size:.78rem;letter-spacing:.22em;text-transform:uppercase;font-weight:600;
 }
-.about__content h2 .mark{background:var(--yellow);padding:0 .15em}
-.about__content p{color:var(--ink-soft);font-size:1.05rem}
-.about__list{list-style:none;padding:0;margin:32px 0 0;display:grid;gap:14px}
-.about__list li{display:flex;align-items:flex-start;gap:14px;color:var(--ink);font-weight:600;font-size:1.02rem}
-.about__list svg{flex:0 0 auto;width:24px;height:24px;color:var(--ink);background:var(--yellow);padding:3px;margin-top:1px}
+.about__year-bar{width:96px;height:6px;background:var(--yellow);margin-top:28px}
 
-/* ===== Stats ===== */
-.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:72px;border-top:2px solid var(--yellow)}
-.stat{padding:36px 28px;border-right:1px solid rgba(255,255,255,.12)}
-.stat:last-child{border-right:0}
-.stat__num{font-family:'Archivo',sans-serif;font-size:3.2rem;font-weight:900;color:var(--yellow);letter-spacing:-.03em;line-height:.9}
-.stat__num span{color:#fff}
-.stat__label{color:#cfcfcf;font-size:.88rem;margin-top:12px;font-weight:500;letter-spacing:.04em}
+.about__content h2{margin-bottom:24px}
+.about__content p{color:var(--ink-soft);font-size:1.08rem}
+.about__content p strong{color:var(--ink);font-weight:700}
+.about__list{list-style:none;padding:0;margin:36px 0 0;display:grid;gap:14px}
+.about__list li{display:flex;align-items:flex-start;gap:14px;color:var(--ink);font-weight:500;font-size:1rem}
+.about__list li::before{content:"";width:20px;height:4px;background:var(--yellow);margin-top:11px;flex:0 0 auto}
 
-/* ===== CTA Band ===== */
-.ctaband{
-  position:relative;background:var(--yellow);color:var(--ink);padding:64px;
-  display:flex;align-items:center;justify-content:space-between;gap:40px;flex-wrap:wrap;
-  margin:0 auto;max-width:1184px;
-  border:3px solid var(--ink);box-shadow:18px 18px 0 var(--ink);
+/* ===== Stats (clean typography on white) ===== */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:48px}
+.stat__num{font-family:'Archivo',sans-serif;font-size:3.4rem;font-weight:800;color:#fff;letter-spacing:-.04em;line-height:.9}
+.stat__num--yellow{color:var(--yellow)}
+.stat__label{color:#bdbdbd;font-size:.78rem;margin-top:14px;font-weight:500;letter-spacing:.14em;text-transform:uppercase}
+
+/* ===== Kontakt (no card borders, just spacing) ===== */
+.kontakt{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+.kontakt__group{margin-bottom:48px}
+.kontakt__group:last-child{margin-bottom:0}
+.kontakt__group-label{
+  display:flex;align-items:center;gap:14px;
+  font-family:'Archivo',sans-serif;font-weight:700;font-size:.74rem;letter-spacing:.22em;text-transform:uppercase;color:var(--ink);margin-bottom:20px;
 }
-.ctaband__text{max-width:600px}
-.ctaband__text h2{color:var(--ink);margin:0 0 12px}
-.ctaband__text p{color:var(--ink);margin:0;font-weight:500;opacity:.85}
-.ctaband__cta{display:flex;gap:14px;flex-wrap:wrap}
+.kontakt__group-label::before{content:"";width:40px;height:4px;background:var(--yellow)}
+.kontakt__value{font-family:'Archivo',sans-serif;font-weight:700;font-size:1.4rem;color:var(--ink);letter-spacing:-.01em;line-height:1.3}
+.kontakt__value a{display:inline-block}
+.kontakt__value a:hover{color:var(--muted)}
+.kontakt__value--multi{font-family:'Inter',sans-serif;font-weight:500;font-size:1.05rem;line-height:1.6}
 
-/* ===== Quote ===== */
-.quote-section{padding:100px 0;background:var(--bg-soft);text-align:center}
-.quote-section blockquote{
-  margin:0 auto;max-width:880px;
-  font-family:'Archivo',sans-serif;font-weight:800;font-size:clamp(1.6rem,3vw,2.4rem);
-  line-height:1.25;letter-spacing:-.01em;color:var(--ink);
-}
-.quote-section blockquote .mark{background:var(--yellow);padding:0 .1em}
-.quote-section cite{display:block;margin-top:24px;font-style:normal;font-family:'Caveat',cursive;font-size:1.5rem;color:var(--ink);font-weight:700}
-
-/* ===== Kontakt ===== */
-.kontakt{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
-.kontakt__card{background:#fff;border:2px solid var(--ink);padding:36px}
-.kontakt__card + .kontakt__card{margin-top:24px}
-.kontakt__row{display:flex;align-items:flex-start;gap:18px;padding:20px 0;border-bottom:1px solid var(--line)}
-.kontakt__row:last-child{border-bottom:0;padding-bottom:0}
-.kontakt__row:first-child{padding-top:0}
-.kontakt__icon{
-  flex:0 0 auto;width:48px;height:48px;background:var(--yellow);
-  display:grid;place-items:center;color:var(--ink);
-}
-.kontakt__icon svg{width:22px;height:22px}
-.kontakt__row-label{color:var(--muted);font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;font-weight:700;margin-bottom:4px}
-.kontakt__row-value{color:var(--ink);font-weight:700;font-size:1.05rem}
-.kontakt__row-value a:hover{background:var(--yellow);padding:0 4px}
-
-.hours{display:grid;gap:12px}
-.hours__row{display:flex;justify-content:space-between;font-size:1rem;color:var(--ink-soft);padding-bottom:10px;border-bottom:1px dashed var(--line)}
+.hours{margin-top:8px}
+.hours__row{display:flex;justify-content:space-between;padding:14px 0;border-bottom:1px solid var(--line);font-size:1rem;color:var(--ink-soft)}
 .hours__row:last-child{border-bottom:0}
-.hours__row strong{color:var(--ink);font-weight:700;font-family:'Archivo',sans-serif;letter-spacing:.04em}
+.hours__row strong{font-family:'Archivo',sans-serif;font-weight:700;color:var(--ink);letter-spacing:.02em}
+.hours__row span{color:var(--muted)}
 .hours__now{
-  margin-top:20px;padding:14px 18px;border:2px solid var(--ink);
-  background:#fff;color:var(--ink);
-  font-weight:700;font-size:.92rem;display:flex;align-items:center;gap:10px;
+  margin-top:24px;padding:14px 0;display:flex;align-items:center;gap:12px;
+  font-family:'Archivo',sans-serif;font-weight:700;font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ink);
+  border-top:4px solid var(--yellow);
 }
-.hours__now .dot{width:10px;height:10px;background:var(--yellow);border:2px solid var(--ink)}
-.hours__now.is-closed{background:var(--ink);color:#fff}
-.hours__now.is-closed .dot{background:var(--yellow);border-color:var(--yellow)}
+.hours__now .dot{width:8px;height:8px;background:var(--ink);border-radius:50%}
+.hours__now.is-closed .dot{background:var(--muted-2)}
+.hours__now.is-closed{color:var(--muted)}
 
-/* ===== Impressum ===== */
-.imprint{font-size:.96rem;color:var(--ink-soft);background:#fff;border:2px solid var(--ink);padding:36px}
-.imprint h4{margin:24px 0 6px;font-size:1rem;color:var(--ink);font-family:'Archivo',sans-serif;letter-spacing:.04em}
-.imprint h4:first-child{margin-top:0}
-.imprint p{margin:0 0 6px}
+/* ===== Referenzen ===== */
+.refs{display:grid;grid-template-columns:1fr 1fr;gap:72px 80px}
+.ref blockquote{
+  margin:0 0 28px;padding:0;quotes:"„" "\"";
+  font-size:1.05rem;line-height:1.7;color:var(--ink-soft);
+}
+.ref blockquote::before{content:open-quote;font-family:'Archivo',sans-serif;font-weight:800;color:var(--ink)}
+.ref blockquote::after{content:close-quote}
+.ref__bar{width:48px;height:4px;background:var(--yellow);margin-bottom:16px}
+.ref__author{font-family:'Archivo',sans-serif;font-weight:700;font-size:1.05rem;color:var(--ink);letter-spacing:-.01em}
+.ref__company{color:var(--muted);font-size:.92rem;margin-top:4px;line-height:1.5}
+
+/* ===== Impressum (classic legal layout) ===== */
+.imprint{font-size:1rem;color:var(--ink-soft);max-width:780px;line-height:1.7}
+.imprint h3{margin:48px 0 14px;font-size:1.3rem;color:var(--ink);font-family:'Archivo',sans-serif;font-weight:700;letter-spacing:-.01em}
+.imprint h3:first-child{margin-top:0}
+.imprint h4{margin:24px 0 6px;font-size:1rem;color:var(--ink);font-family:'Archivo',sans-serif;font-weight:700}
+.imprint p{margin:0 0 12px}
+.imprint a{color:var(--ink);text-decoration:underline;text-decoration-color:var(--yellow);text-decoration-thickness:2px;text-underline-offset:4px}
+.imprint a:hover{background:var(--yellow)}
 
 /* ===== FOOTER ===== */
-.footer{background:var(--ink);color:#bdbdbd;padding:80px 0 32px;font-size:.93rem;border-top:6px solid var(--yellow)}
-.footer__top{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:48px;padding-bottom:48px;border-bottom:1px solid rgba(255,255,255,.12)}
-.footer__brand{display:flex;align-items:center;gap:14px;margin-bottom:20px}
-.footer__brand-text{color:#fff;font-family:'Archivo',sans-serif;font-weight:800;font-size:1.15rem;line-height:1.05}
-.footer__brand-text span{display:block;font-size:.7rem;font-weight:600;color:#bdbdbd;letter-spacing:.18em;text-transform:uppercase;margin-top:4px}
-.footer h4{color:#fff;font-size:.82rem;letter-spacing:.18em;text-transform:uppercase;margin-bottom:20px;font-weight:700;font-family:'Archivo',sans-serif}
-.footer ul{list-style:none;padding:0;margin:0;display:grid;gap:10px}
-.footer a:hover{color:var(--yellow)}
-.footer__bottom{display:flex;justify-content:space-between;align-items:center;padding-top:28px;flex-wrap:wrap;gap:16px;color:#7a7a7a;font-size:.85rem}
-.footer__bottom a:hover{color:var(--yellow)}
+.footer{background:#fff;color:var(--ink);padding:0 0 32px;font-size:.92rem;position:relative}
+.footer__bar{height:6px;background:var(--yellow)}
+.footer__top{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:48px;padding:80px 0 56px}
+.footer__brand .logo{margin-bottom:24px}
+.footer__brand p{color:var(--muted);max-width:340px}
+.footer h4{color:var(--ink);font-size:.74rem;letter-spacing:.2em;text-transform:uppercase;margin-bottom:22px;font-weight:700;font-family:'Archivo',sans-serif}
+.footer ul{list-style:none;padding:0;margin:0;display:grid;gap:12px;color:var(--muted)}
+.footer a:hover{color:var(--ink)}
+.footer__bottom{display:flex;justify-content:space-between;align-items:center;padding-top:32px;flex-wrap:wrap;gap:16px;color:var(--muted-2);font-size:.85rem;border-top:1px solid var(--line)}
 
 /* ===== Responsive ===== */
 @media (max-width:980px){
-  .hero{padding:56px 0 80px}
-  .hero__inner{grid-template-columns:1fr;gap:48px}
-  .hero::before{width:540px;height:540px;right:-280px;top:-100px}
+  .hero{padding:64px 0 90px}
+  .hero__meta{grid-template-columns:repeat(2,1fr);gap:28px;margin-top:64px}
   .nav__links,.nav__phone{display:none}
   .burger{display:flex}
-  .services{grid-template-columns:repeat(2,1fr)}
+  .services{grid-template-columns:repeat(2,1fr);gap:48px 40px}
+  .refs{grid-template-columns:1fr;gap:56px}
   .about{grid-template-columns:1fr;gap:64px}
-  .about__visual{padding:36px;min-height:380px;box-shadow:12px 12px 0 var(--yellow)}
-  .about__badge{top:20px;right:20px}
-  .stats{grid-template-columns:repeat(2,1fr)}
-  .stat:nth-child(2){border-right:0}
-  .kontakt{grid-template-columns:1fr;gap:28px}
-  .ctaband{padding:40px 28px;box-shadow:10px 10px 0 var(--ink)}
-  .section{padding:80px 0}
-  .brandstripe__inner{font-size:1rem;gap:30px}
-  .brandstripe__inner span{gap:30px}
+  .about__year{font-size:9rem}
+  .stats{grid-template-columns:repeat(2,1fr);gap:36px}
+  .kontakt{grid-template-columns:1fr;gap:48px}
+  .section{padding:96px 0}
+  .quote{padding:96px 0}
+  .stripe--tall{padding:48px 0}
+  .stripe--words .word{padding:0 22px;gap:22px;font-size:1rem}
 }
 @media (max-width:600px){
   body{font-size:16px}
   .services{grid-template-columns:1fr}
-  .footer__top{grid-template-columns:1fr;gap:32px}
-  .hero__meta{gap:24px}
-  .hero__meta-item strong{font-size:2rem}
-  .ctaband{flex-direction:column;align-items:flex-start;text-align:left}
-  .hero__quote{display:none}
+  .footer__top{grid-template-columns:1fr;gap:36px;padding:64px 0 40px}
+  .hero__cta{gap:14px}
+  .stripe__inner{flex-direction:column;align-items:flex-start}
 }
 </style>
 </head>
 <body>
 
-<!-- ============ LOGO TEMPLATE ============ -->
-<svg width="0" height="0" style="position:absolute" aria-hidden="true">
-  <defs>
-    <symbol id="logoFuerst" viewBox="0 0 120 120">
-      <rect width="120" height="120" rx="6" fill="#1c1c1c"/>
-      <text x="60" y="68" text-anchor="middle" font-family="Archivo,sans-serif" font-weight="900" font-style="italic" font-size="46" fill="#ffe000" letter-spacing="-1">fürst</text>
-      <rect x="22" y="78" width="76" height="2" fill="#ffe000"/>
-      <text x="60" y="100" text-anchor="middle" font-family="Archivo,sans-serif" font-weight="700" font-size="13" fill="#ffe000" letter-spacing="3">METALLBAU</text>
-    </symbol>
-  </defs>
-</svg>
-
 <!-- ============ NAV ============ -->
 <header class="nav">
   <div class="shell nav__top">
-    <a href="#top" class="nav__brand" aria-label="Fürst Metallbau – Startseite">
-      <svg class="logo logo--sm"><use href="#logoFuerst"/></svg>
-      <span class="nav__brand-text">Fürst Metallbau<span>Rottweil · seit 1953</span></span>
+    <a href="#top" class="logo" aria-label="Fürst Metallbau – Startseite">
+      <span class="logo__main">fürst</span>
+      <span class="logo__bar"></span>
+      <span class="logo__sub">METALLBAU</span>
     </a>
     <nav class="nav__links" aria-label="Hauptnavigation">
       <a href="#top" class="is-active">Willkommen</a>
       <a href="#loesungen">Lösungen</a>
+      <a href="#referenzen">Referenzen</a>
       <a href="#ueber-uns">Über uns</a>
-      <a href="#bilder">Bilder</a>
       <a href="#kontakt">Kontakt</a>
     </nav>
     <div class="nav__cta">
       <span class="nav__phone">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0 1 22 16.92z"/></svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0 1 22 16.92z"/></svg>
         <a href="tel:+4974153230">0741 53 23‑0</a>
       </span>
       <a href="#kontakt" class="btn btn--yellow">Anfragen</a>
@@ -408,59 +312,45 @@ em{font-style:normal;background:var(--yellow);padding:0 4px;border-radius:2px;co
   <!-- ============ HERO ============ -->
   <section class="hero">
     <div class="shell hero__inner">
-      <div>
-        <span class="hero__kicker"><span class="dot"></span> Familienbetrieb · seit 1953</span>
-        <h1>
-          <span class="mark">Der Fürst</span><br/>
-          Ihrer <span class="strike-through">Sicherheit.</span>
-        </h1>
-        <p class="hero__leidenschaft">
-          <span class="quote-mark">„</span>Ihre <strong>SICHERHEIT</strong> zu gewährleisten ist unsere größte <strong>LEIDENSCHAFT</strong>.<span class="quote-mark">"</span>
-        </p>
-        <p class="hero__sub">
-          <strong>Wohlgefühl für Sie</strong> — gewerbliche und private Komplettlösungen aus Rottweil. Schließanlagen, Geländer, Treppen, Tore, Türen und Edelstahl. Beratung, Werkstatt und Montage aus einer Hand.
-        </p>
-        <div class="hero__cta">
-          <a href="#kontakt" class="btn btn--yellow btn--lg">
-            Kostenlosen Sicherheits-Check
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
-          </a>
-          <a href="#loesungen" class="btn btn--ghost btn--lg">Lösungen ansehen</a>
-        </div>
-
-        <div class="hero__meta">
-          <div class="hero__meta-item"><strong>1953</strong><span>Gegründet</span></div>
-          <div class="hero__meta-item"><strong>70+</strong><span>Jahre Erfahrung</span></div>
-          <div class="hero__meta-item"><strong>2.</strong><span>Generation</span></div>
-        </div>
+      <span class="eyebrow">Familienbetrieb · seit 1953</span>
+      <h1>
+        Der <span class="yellow-wipe">Fürst</span><br/>
+        Ihrer Sicherheit.
+      </h1>
+      <p class="hero__sub">
+        Karl-Georg Fürst Metallbau aus Rottweil. <strong>Wohlgefühl für Sie</strong> — gewerbliche und private Komplettlösungen. Schließanlagen, Geländer, Treppen, Tore, Türen und Edelstahl. Beratung, Werkstatt und Montage aus einer Hand.
+      </p>
+      <div class="hero__cta">
+        <a href="#kontakt" class="btn btn--dark btn--lg">
+          Sicherheits-Check anfragen
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </a>
+        <a href="#loesungen" class="btn btn--text">
+          Lösungen ansehen
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </a>
       </div>
 
-      <aside class="hero__card">
-        <div class="burst" aria-label="Kostenloser Sicherheits-Check">
-          <svg class="burst__shape" viewBox="0 0 200 200" preserveAspectRatio="none" aria-hidden="true">
-            <polygon fill="currentColor" points="100,0 113,18 132,8 138,29 158,26 158,47 178,50 170,69 188,77 173,93 188,109 170,117 178,136 158,139 158,160 138,157 132,178 113,168 100,186 87,168 68,178 62,157 42,160 42,139 22,136 30,117 12,109 27,93 12,77 30,69 22,50 42,47 42,26 62,29 68,8 87,18"/>
-          </svg>
-          <div class="burst__content">
-            <span class="burst__small">Kostenloser</span>
-            <span class="burst__big">Sicherheits-<br/>Check</span>
-            <span class="burst__arrow">↘</span>
-            <a href="#kontakt" class="burst__cta">Jetzt anfragen</a>
-          </div>
-        </div>
-        <div class="hero__quote">Zufriedene Kunden sind unser Standard, begeisterte Kunden unser tägliches Ziel!</div>
-      </aside>
+      <div class="hero__meta">
+        <div class="hero__meta-item"><strong>1953</strong><span>Gegründet</span></div>
+        <div class="hero__meta-item"><strong>70+</strong><span>Jahre Erfahrung</span></div>
+        <div class="hero__meta-item"><strong>2.</strong><span>Generation</span></div>
+        <div class="hero__meta-item"><strong>6</strong><span>Geschäftsbereiche</span></div>
+      </div>
     </div>
   </section>
 
-  <!-- ============ BRAND STRIPE ============ -->
-  <section class="brandstripe" aria-hidden="true">
-    <div class="brandstripe__inner">
-      <span>Sicherheit</span>
-      <span>Schließanlagen</span>
-      <span>Edelstahl</span>
-      <span>Geländer</span>
-      <span>Treppen</span>
-      <span>Türen</span>
+  <!-- ============ YELLOW STRIPE 1 — LEIDENSCHAFT ============ -->
+  <section class="stripe stripe--tall">
+    <div class="shell stripe__inner">
+      <div class="stripe__text">
+        Ihre <em>Sicherheit</em> zu gewährleisten<br/>
+        ist unsere größte <em>Leidenschaft</em>.
+      </div>
+      <a href="#kontakt" class="btn btn--dark stripe__cta">
+        Kostenloser Sicherheits-Check
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </a>
     </div>
   </section>
 
@@ -469,61 +359,43 @@ em{font-style:normal;background:var(--yellow);padding:0 4px;border-radius:2px;co
     <div class="shell">
       <div class="section__head">
         <span class="eyebrow">Lösungen</span>
-        <h2>Vom Schloss bis zum Treppenhaus — alles <span class="mark">aus einer Hand.</span></h2>
+        <h2>Vom Schloss bis zum Treppenhaus — alles aus einer Hand.</h2>
         <p>Sechs Geschäftsbereiche, ein Anspruch: ehrliches Handwerk in der Qualität, die nur ein eingespielter Familienbetrieb liefert.</p>
       </div>
 
       <div class="services">
         <article class="service">
-          <div class="service__num">01</div>
-          <div class="service__icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-          </div>
+          <div class="service__num">01 · Sicherheit</div>
           <h3>Sicherheitstechnik &amp; Einbruchschutz</h3>
           <p>Türen und Lichtschächte mechanisch sichern. Persönliche Beratung zu Einbruchschutz und passenden Sicherungslösungen für Ihr Objekt.</p>
         </article>
 
         <article class="service">
-          <div class="service__num">02</div>
-          <div class="service__icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="16" r="3"/><path d="M12 13V5M9 8h6"/></svg>
-          </div>
+          <div class="service__num">02 · Schließsysteme</div>
           <h3>Schließanlagen</h3>
           <p>Vom Einzelschloss bis zur komplexen Generalschlüssel-Anlage — Planung, Lieferung, Montage und Wartung.</p>
         </article>
 
         <article class="service">
-          <div class="service__num">03</div>
-          <div class="service__icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21l3-9 4 2 3-7 4 2 2-5"/><path d="M3 21h18"/></svg>
-          </div>
+          <div class="service__num">03 · Metallbau</div>
           <h3>Geländer, Balkone, Treppen, Tore</h3>
           <p>Maßgefertigt aus Stahl, verzinkt oder beschichtet. Funktional, langlebig und sauber verarbeitet.</p>
         </article>
 
         <article class="service">
-          <div class="service__num">04</div>
-          <div class="service__icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3v18M18 3v18"/><path d="M6 7h12M6 17h12"/></svg>
-          </div>
+          <div class="service__num">04 · Edelstahl</div>
           <h3>Edelstahl-Konstruktionen</h3>
           <p>Geländer, Vordächer, Designelemente. Geschliffen, poliert oder gebürstet — auf den Millimeter gefertigt.</p>
         </article>
 
         <article class="service">
-          <div class="service__num">05</div>
-          <div class="service__icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="1"/><path d="M12 3v18"/><circle cx="16" cy="12" r="1" fill="currentColor"/></svg>
-          </div>
+          <div class="service__num">05 · Türen</div>
           <h3>Türen</h3>
           <p>Wohn- und Objektbau. Energetisch saniert, barrierefrei umgebaut oder neu eingesetzt — wir übernehmen.</p>
         </article>
 
         <article class="service">
-          <div class="service__num">06</div>
-          <div class="service__icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 7l-9 9v4h4l9-9"/><path d="M14 7l3-3a2 2 0 0 1 3 3l-3 3"/></svg>
-          </div>
+          <div class="service__num">06 · Service</div>
           <h3>Wartung, Reparatur, Renovierung</h3>
           <p>Quietschende Tore, klemmende Türen, defekte Schlösser — wir bringen Bestand wieder in Form.</p>
         </article>
@@ -531,112 +403,116 @@ em{font-style:normal;background:var(--yellow);padding:0 4px;border-radius:2px;co
     </div>
   </section>
 
+  <!-- ============ YELLOW STRIPE 2 — WORDS ============ -->
+  <section class="stripe stripe--words" aria-hidden="true">
+    <div class="stripe__inner">
+      <span class="word">Sicherheit</span>
+      <span class="word">Schließanlagen</span>
+      <span class="word">Edelstahl</span>
+      <span class="word">Geländer</span>
+      <span class="word">Treppen</span>
+      <span class="word">Türen</span>
+    </div>
+  </section>
+
   <!-- ============ QUOTE ============ -->
-  <section class="quote-section">
+  <section class="quote">
     <div class="shell">
       <blockquote>
-        „Zufriedene Kunden sind unser Standard,<br/>
-        <span class="mark">begeisterte Kunden</span> unser tägliches Ziel!"
+        Zufriedene Kunden sind unser Standard,<br/>
+        <span class="yellow-wipe">begeisterte Kunden</span> unser tägliches Ziel.
       </blockquote>
-      <cite>— Karl-Georg Fürst</cite>
+      <cite>Karl-Georg Fürst</cite>
     </div>
   </section>
 
   <!-- ============ ÜBER UNS ============ -->
-  <section class="section section--alt" id="ueber-uns">
+  <section class="section" id="ueber-uns" style="padding-top:0">
     <div class="shell about">
       <div class="about__visual">
-        <span class="about__badge">Seit 1953</span>
-        <div>
-          <div class="about__year">70+</div>
-          <div class="about__year-sub">Jahre Metall &amp; Sicherheit</div>
-        </div>
-        <div class="about__visual-foot">
-          <p>Aus einer traditionellen Schlosserei der Nachkriegszeit ist heute ein moderner Metall- und Edelstahl-Betrieb für Wohn- und Gewerbesicherheit geworden.</p>
-          <span class="about__signature">Karl-Georg Fürst</span>
-        </div>
+        <div class="about__year">70<span style="color:var(--yellow);font-size:.6em">+</span></div>
+        <div class="about__year-bar"></div>
+        <div class="about__year-sub">Jahre Metall &amp; Sicherheit · seit 1953</div>
       </div>
 
       <div class="about__content">
         <span class="eyebrow">Über uns</span>
-        <h2>Zwei Generationen Handwerk. <span class="mark">Eine Adresse</span> für Sicherheit.</h2>
+        <h2>Zwei Generationen Handwerk. Eine Adresse für Sicherheit.</h2>
         <p>Die <strong>Karl-Georg Fürst Metallbau</strong> wurde <strong>1953</strong> gegründet und blickt heute auf über <strong>70 Jahre Betriebsgeschichte</strong> zurück. Was als klassische Schlosserei begann, ist heute ein mittelständischer Metallbau-Handwerksbetrieb, der sich auf Sicherheit für Wohn- und Gewerbeobjekte spezialisiert hat — geführt in <strong>zweiter Generation</strong> von Karl-Georg Fürst.</p>
         <p>Unser Anspruch: ehrliches Handwerk, persönliche Beratung und eine Qualität, die aus jahrzehntelanger Erfahrung in Rottweil und der Region wächst.</p>
 
         <ul class="about__list">
-          <li>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-            <span>Familienbetrieb in zweiter Generation</span>
-          </li>
-          <li>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-            <span>Eigene Werkstatt &amp; Montage aus Rottweil</span>
-          </li>
-          <li>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-            <span>Spezialisiert auf Sicherheit, Edelstahl und Barrierefreiheit</span>
-          </li>
-          <li>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-            <span>Privatkunden, Gewerbe und öffentliche Auftraggeber</span>
-          </li>
+          <li>Familienbetrieb in zweiter Generation</li>
+          <li>Eigene Werkstatt &amp; Montage aus Rottweil</li>
+          <li>Spezialisiert auf Sicherheit, Edelstahl und Barrierefreiheit</li>
+          <li>Privatkunden, Gewerbe und öffentliche Auftraggeber</li>
         </ul>
       </div>
     </div>
   </section>
 
-  <!-- ============ SICHERHEIT / STATS ============ -->
-  <section class="section section--dark" id="sicherheit">
+  <!-- ============ REFERENZEN ============ -->
+  <section class="section" id="referenzen">
     <div class="shell">
       <div class="section__head">
-        <span class="eyebrow eyebrow--light">Sicherheit zuerst</span>
-        <h2>Warum wir <span class="mark">Sicherheits-Fürst</span> heißen.</h2>
-        <p>Sicherheit ist kein Produkt, das man aus dem Regal nimmt. Sie ist das Ergebnis von Beratung, Maßarbeit und Verantwortung — und genau das ist unser Tagesgeschäft.</p>
+        <span class="eyebrow">Referenzen</span>
+        <h2>Was unsere Kunden sagen.</h2>
+        <p>Stimmen aus Industrie, Gewerbe und Privathaushalten — Auftraggeber, die seit Jahren oder Jahrzehnten mit uns zusammenarbeiten.</p>
       </div>
 
-      <div class="services" style="border-color:var(--yellow);border-left-color:var(--yellow)">
-        <article class="service" style="background:#111;border-right-color:var(--yellow);border-bottom-color:var(--yellow);color:#fff">
-          <div class="service__num" style="color:var(--yellow)">01</div>
-          <div class="service__icon" style="background:var(--yellow);color:var(--ink)">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 4v6c0 5-3.5 9-8 10-4.5-1-8-5-8-10V6l8-4z"/></svg>
-          </div>
-          <h3 style="color:#fff">Geprüfte Qualität</h3>
-          <p style="color:#cfcfcf">Über 70 Jahre Erfahrung im Metallbau — und das tägliche Versprechen, dass nur einwandfreie Arbeit aus unserer Werkstatt geht.</p>
-        </article>
+      <div class="refs">
+        <div class="ref">
+          <blockquote>Herr Fürst und die Firma Fürst begleiten uns seit Jahren als zuverlässiger Partner in allen Fragen und Aufgaben rund um die Sicherheitstechnik und Zutrittskontrolle. Unser Gebäude und Firmensitz der Schick Group wird sugsessiv je nach Expansion unserer Firmen renoviert und neue Räumlichkeiten im Gebäude bezogen. Die Firma Fürst verwaltet verantwortungsbewusst unsere komplette Zutrittskontrolle und steht uns jederzeit schnell und unkompliziert bei den alltäglichen Erfordernissen und allen Erweiterungen im Gebäude zur Seite.</blockquote>
+          <div class="ref__bar"></div>
+          <div class="ref__author">Helmut Schick</div>
+          <div class="ref__company">Gründer und Inhaber der Schick Group<br/>Schick Holding GmbH · Schick Medical GmbH · Schick Beauty AG</div>
+        </div>
 
-        <article class="service" style="background:#111;border-right-color:var(--yellow);border-bottom-color:var(--yellow);color:#fff">
-          <div class="service__num" style="color:var(--yellow)">02</div>
-          <div class="service__icon" style="background:var(--yellow);color:var(--ink)">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.6 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9c.4.39.94.62 1.51.62H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
-          </div>
-          <h3 style="color:#fff">Maßarbeit statt Massenware</h3>
-          <p style="color:#cfcfcf">Jede Schließanlage, jedes Geländer, jede Tür wird auf Ihr Objekt geplant — keine Standardlösung von der Stange.</p>
-        </article>
+        <div class="ref">
+          <blockquote>Im Dez. 09 haben die Mitarbeiter der Fa. Fürst in meiner Wohnung neue Fenster und eine neue Balkontür (Sondermaß) eingebaut. Sie haben diese schwierige Aufgabe mit Bravour gemeistert und pünktlich und sehr sauber gearbeitet. Vielen Dank dafür. Ich kann die Fa. Fürst nur weiterempfehlen.</blockquote>
+          <div class="ref__bar"></div>
+          <div class="ref__author">Karl-Heinz Damm</div>
+          <div class="ref__company">Spaichingen</div>
+        </div>
 
-        <article class="service" style="background:#111;border-right-color:var(--yellow);border-bottom-color:var(--yellow);color:#fff">
-          <div class="service__num" style="color:var(--yellow)">03</div>
-          <div class="service__icon" style="background:var(--yellow);color:var(--ink)">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0 1 22 16.92z"/></svg>
-          </div>
-          <h3 style="color:#fff">Persönliche Ansprechpartner</h3>
-          <p style="color:#cfcfcf">Sie rufen an, wir kommen. Keine Hotline — Karl-Georg Fürst und sein Team direkt aus Rottweil.</p>
-        </article>
+        <div class="ref">
+          <blockquote>Wir möchten uns bei Ihnen sehr bedanken. Zum einen hatten wir an dem Treppengeländer in unserem Haus in der Titiseestrasse, das Sie uns entworfen und gebaut haben, täglich Freude. Insbesondere die Formschönheit, das angenehme Material und die erstklassige Ausführung haben uns sehr gefallen. Folglich haben wir Sie für sämtliche Metallarbeiten in unserem neuen Haus gewählt. Es war eine sehr gute und konstruktive Zusammenarbeit in allen Bauphasen mit einem Ergebnis, wie wir uns es wünschten.</blockquote>
+          <div class="ref__bar"></div>
+          <div class="ref__author">Fam. Zeller</div>
+        </div>
+
+        <div class="ref">
+          <blockquote>Exzellenter Metallbau; innovative Vorschläge, Pünktlichkeit, Verlässlichkeit und hervorragende Ausführung sämtlicher Schlosserarbeiten, dafür steht Firma Fürst / Metallbau in Rottweil. Daher arbeitet unser Zentrum seit über 50 Jahren vertrauensvoll mit der Firma Fürst zusammen.</blockquote>
+          <div class="ref__bar"></div>
+          <div class="ref__author">Dr. Hans-Günter Ochs</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ STATS (dark, minimal) ============ -->
+  <section class="section section--dark" style="padding:120px 0">
+    <div class="shell">
+      <div class="section__head section__head--center">
+        <span class="eyebrow eyebrow--light">Sicherheit zuerst</span>
+        <h2>Warum wir Sicherheits-Fürst heißen.</h2>
+        <p>Sicherheit ist kein Produkt, das man aus dem Regal nimmt. Sie ist das Ergebnis von Beratung, Maßarbeit und Verantwortung.</p>
       </div>
 
       <div class="stats">
-        <div class="stat">
-          <div class="stat__num">1953</div>
+        <div>
+          <div class="stat__num stat__num--yellow">1953</div>
           <div class="stat__label">Gegründet in Rottweil</div>
         </div>
-        <div class="stat">
-          <div class="stat__num">70<span>+</span></div>
+        <div>
+          <div class="stat__num">70<span style="color:var(--yellow)">+</span></div>
           <div class="stat__label">Jahre Betriebs­geschichte</div>
         </div>
-        <div class="stat">
+        <div>
           <div class="stat__num">2.</div>
           <div class="stat__label">Generation Familienbetrieb</div>
         </div>
-        <div class="stat">
+        <div>
           <div class="stat__num">6</div>
           <div class="stat__label">Geschäfts­bereiche</div>
         </div>
@@ -644,75 +520,52 @@ em{font-style:normal;background:var(--yellow);padding:0 4px;border-radius:2px;co
     </div>
   </section>
 
-  <!-- ============ CTA BAND ============ -->
-  <section style="padding:100px 0;background:#fff" id="bilder">
-    <div class="shell">
-      <div class="ctaband">
-        <div class="ctaband__text">
-          <span class="eyebrow">Komplettlösungen</span>
-          <h2>Sie planen ein Projekt? <span style="background:var(--ink);color:var(--yellow);padding:0 .15em">Sprechen Sie</span> mit uns.</h2>
-          <p>Ob Schließanlage, Geländer, Edelstahl-Sonderanfertigung oder Einbruchschutz — eine kurze Beratung kostet nichts und klärt fast alles.</p>
-        </div>
-        <div class="ctaband__cta">
-          <a href="tel:+4974153230" class="btn btn--ghost btn--lg">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0 1 22 16.92z"/></svg>
-            0741 53 23‑0
-          </a>
-          <a href="mailto:info@sicherheitsfuerst.de" class="btn btn--ghost btn--lg">E-Mail schreiben</a>
-        </div>
+  <!-- ============ YELLOW STRIPE 3 — CTA ============ -->
+  <section class="stripe stripe--tall">
+    <div class="shell stripe__inner">
+      <div class="stripe__text">
+        Sie planen ein Projekt?<br/>
+        Sprechen Sie mit uns — eine Beratung kostet nichts.
       </div>
+      <a href="tel:+4974153230" class="btn btn--dark stripe__cta">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0 1 22 16.92z"/></svg>
+        0741 53 23‑0
+      </a>
     </div>
   </section>
 
   <!-- ============ KONTAKT ============ -->
-  <section class="section section--alt" id="kontakt">
+  <section class="section" id="kontakt">
     <div class="shell">
       <div class="section__head">
         <span class="eyebrow">Kontakt</span>
-        <h2>So <span class="mark">erreichen</span> Sie uns.</h2>
+        <h2>So erreichen Sie uns.</h2>
         <p>Wir sind ein Handwerksbetrieb — kein Call-Center. Wenn wir gerade in der Werkstatt sind, hinterlassen Sie eine Nachricht, wir rufen verlässlich zurück.</p>
       </div>
 
       <div class="kontakt">
         <div>
-          <div class="kontakt__card">
-            <div class="kontakt__row">
-              <div class="kontakt__icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-              </div>
-              <div>
-                <div class="kontakt__row-label">Adresse</div>
-                <div class="kontakt__row-value">
-                  Karl-Georg Fürst Metallbau<br/>
-                  Burkardstraße 22<br/>
-                  78628 Rottweil
-                </div>
-              </div>
+          <div class="kontakt__group">
+            <div class="kontakt__group-label">Adresse</div>
+            <div class="kontakt__value kontakt__value--multi">
+              Karl-Georg Fürst Metallbau<br/>
+              Burkardstraße 22<br/>
+              78628 Rottweil
             </div>
-            <div class="kontakt__row">
-              <div class="kontakt__icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0 1 22 16.92z"/></svg>
-              </div>
-              <div>
-                <div class="kontakt__row-label">Telefon</div>
-                <div class="kontakt__row-value"><a href="tel:+4974153230">0741 53 23‑0</a></div>
-              </div>
-            </div>
-            <div class="kontakt__row">
-              <div class="kontakt__icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-              </div>
-              <div>
-                <div class="kontakt__row-label">E-Mail</div>
-                <div class="kontakt__row-value"><a href="mailto:info@sicherheitsfuerst.de">info@sicherheitsfuerst.de</a></div>
-              </div>
-            </div>
+          </div>
+          <div class="kontakt__group">
+            <div class="kontakt__group-label">Telefon</div>
+            <div class="kontakt__value"><a href="tel:+4974153230">0741 53 23‑0</a></div>
+          </div>
+          <div class="kontakt__group">
+            <div class="kontakt__group-label">E-Mail</div>
+            <div class="kontakt__value"><a href="mailto:info@sicherheitsfuerst.de">info@sicherheitsfuerst.de</a></div>
           </div>
         </div>
 
         <div>
-          <div class="kontakt__card">
-            <h3 style="margin:0 0 20px;font-size:1.35rem">Öffnungszeiten</h3>
+          <div class="kontakt__group">
+            <div class="kontakt__group-label">Öffnungszeiten</div>
             <div class="hours">
               <div class="hours__row"><strong>Montag – Freitag</strong><span>08:00 – 12:00 &nbsp;·&nbsp; 13:00 – 16:00</span></div>
               <div class="hours__row"><strong>Samstag &amp; Sonntag</strong><span>Geschlossen</span></div>
@@ -723,14 +576,11 @@ em{font-style:normal;background:var(--yellow);padding:0 4px;border-radius:2px;co
               <span id="hoursNowText">Wir berechnen Status…</span>
             </div>
           </div>
-
-          <div class="kontakt__card">
-            <h3 style="margin:0 0 12px;font-size:1.35rem">Schlüsseldienst &amp; Beratung</h3>
-            <p style="color:var(--ink-soft);margin:0 0 20px">Schlüsseldienst, Schließanlagen, Einbruchschutz — wir beraten Sie persönlich. An Sonn- und Feiertagen sind wir nicht erreichbar; rufen Sie uns innerhalb der Öffnungszeiten an oder hinterlassen Sie eine Nachricht.</p>
-            <a href="tel:+4974153230" class="btn btn--yellow">
-              Jetzt anrufen
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
-            </a>
+          <div class="kontakt__group">
+            <div class="kontakt__group-label">Hinweis</div>
+            <div class="kontakt__value kontakt__value--multi" style="color:var(--muted)">
+              Schlüsseldienst, Schließanlagen und Einbruchschutz beraten wir persönlich innerhalb der Öffnungszeiten. An Sonn- und Feiertagen sind wir nicht erreichbar — bitte hinterlassen Sie eine Nachricht, wir rufen zurück.
+            </div>
           </div>
         </div>
       </div>
@@ -738,21 +588,64 @@ em{font-style:normal;background:var(--yellow);padding:0 4px;border-radius:2px;co
   </section>
 
   <!-- ============ IMPRESSUM ============ -->
-  <section class="section" id="impressum">
-    <div class="shell" style="max-width:820px">
-      <div class="section__head section__head--left" style="margin-bottom:32px;margin-left:0">
+  <section class="section section--narrow" id="impressum">
+    <div class="shell">
+      <div class="section__head" style="margin-bottom:48px">
         <span class="eyebrow">Impressum</span>
         <h2>Angaben gemäß § 5 TMG</h2>
       </div>
       <div class="imprint">
-        <h4>Anbieter</h4>
         <p>Karl-Georg Fürst Metallbau<br/>Burkardstraße 22<br/>78628 Rottweil</p>
-        <h4>Kontakt</h4>
-        <p>Telefon: 0741 53 23‑0<br/>E-Mail: info@sicherheitsfuerst.de</p>
-        <h4>Inhaber</h4>
-        <p>Karl-Georg Fürst</p>
-        <h4>Hinweis</h4>
-        <p style="color:var(--muted);font-size:.88rem;margin-top:14px">Vollständige Pflichtangaben (USt-IdNr., Berufshaftpflicht, Aufsichtsbehörde, Streitschlichtung) werden im finalen Relaunch durch den Kunden ergänzt.</p>
+
+        <h3>Kontakt</h3>
+        <p>
+          Telefon: 0741 – 53230<br/>
+          Telefax: 0741 – 532323<br/>
+          E-Mail: <a href="mailto:info@sicherheitsfuerst.de">info@sicherheitsfuerst.de</a>
+        </p>
+
+        <h3>Umsatzsteuer</h3>
+        <p>Umsatzsteuer-Identifikationsnummer gemäß §27 a Umsatzsteuergesetz:<br/>DE 142793121</p>
+
+        <h3>Aufsichtsbehörde</h3>
+        <p>
+          Handwerkskammer Konstanz<br/>
+          Webersteig 3<br/>
+          78462 Konstanz
+        </p>
+        <p><a href="http://www.hwk-konstanz.de" target="_blank" rel="noopener">http://www.hwk-konstanz.de</a></p>
+
+        <h3>Berufsbezeichnung und berufsrechtliche Regelungen</h3>
+        <p>
+          Berufsbezeichnung: Metallbauermeister<br/>
+          Zuständige Kammer: Handwerkskammer Stuttgart<br/>
+          Verliehen durch: Handwerkskammer Stuttgart
+        </p>
+
+        <h3>Angaben zur Betriebshaftpflichtversicherung</h3>
+        <h4>Name und Sitz des Versicherers:</h4>
+        <p>
+          VHV Allgemeine Versicherung AG<br/>
+          VHV Platz 1<br/>
+          30177 Hannover
+        </p>
+        <p>Geltungsraum der Versicherung: Deutschland, Ausland<br/>(außer USA, Kanada, Frankreich)</p>
+
+        <h3>Streitschlichtung</h3>
+        <p>Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit: <a href="https://ec.europa.eu/consumers/odr" target="_blank" rel="noopener">https://ec.europa.eu/consumers/odr</a>.<br/>Unsere E-Mail-Adresse finden Sie oben im Impressum.</p>
+        <p>Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>
+
+        <h3>Haftung für Inhalte</h3>
+        <p>Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen.</p>
+        <p>Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon unberührt. Eine diesbezügliche Haftung ist jedoch erst ab dem Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung möglich. Bei Bekanntwerden von entsprechenden Rechtsverletzungen werden wir diese Inhalte umgehend entfernen.</p>
+
+        <h3>Haftung für Links</h3>
+        <p>Unser Angebot enthält Links zu externen Websites Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich. Die verlinkten Seiten wurden zum Zeitpunkt der Verlinkung auf mögliche Rechtsverstöße überprüft. Rechtswidrige Inhalte waren zum Zeitpunkt der Verlinkung nicht erkennbar.</p>
+        <p>Eine permanente inhaltliche Kontrolle der verlinkten Seiten ist jedoch ohne konkrete Anhaltspunkte einer Rechtsverletzung nicht zumutbar. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Links umgehend entfernen.</p>
+
+        <h3>Urheberrecht</h3>
+        <p>Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers. Downloads und Kopien dieser Seite sind nur für den privaten, nicht kommerziellen Gebrauch gestattet.</p>
+        <p>Soweit die Inhalte auf dieser Seite nicht vom Betreiber erstellt wurden, werden die Urheberrechte Dritter beachtet. Insbesondere werden Inhalte Dritter als solche gekennzeichnet. Sollten Sie trotzdem auf eine Urheberrechtsverletzung aufmerksam werden, bitten wir um einen entsprechenden Hinweis. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Inhalte umgehend entfernen.</p>
       </div>
     </div>
   </section>
@@ -761,15 +654,16 @@ em{font-style:normal;background:var(--yellow);padding:0 4px;border-radius:2px;co
 
 <!-- ============ FOOTER ============ -->
 <footer class="footer">
+  <div class="footer__bar"></div>
   <div class="shell">
     <div class="footer__top">
-      <div>
-        <div class="footer__brand">
-          <svg class="logo logo--sm"><use href="#logoFuerst"/></svg>
-          <div class="footer__brand-text">Fürst Metallbau<span>Rottweil · seit 1953</span></div>
-        </div>
+      <div class="footer__brand">
+        <span class="logo">
+          <span class="logo__main">fürst</span>
+          <span class="logo__bar"></span>
+          <span class="logo__sub">METALLBAU</span>
+        </span>
         <p>Seit 1953 Metall- und Edelstahlbau für Wohn- und Gewerbesicherheit. Familienbetrieb in zweiter Generation aus Rottweil.</p>
-        <p style="margin-top:18px;font-family:'Caveat',cursive;color:var(--yellow);font-weight:700;font-size:1.4rem;line-height:1.1">Der Fürst Ihrer Sicherheit.</p>
       </div>
       <div>
         <h4>Lösungen</h4>
@@ -801,7 +695,7 @@ em{font-style:normal;background:var(--yellow);padding:0 4px;border-radius:2px;co
         </ul>
       </div>
     </div>
-    <div class="footer__bottom">
+    <div class="shell footer__bottom">
       <span>© <span id="year"></span> Karl-Georg Fürst Metallbau · Rottweil</span>
       <span><a href="#impressum">Impressum</a> &nbsp;·&nbsp; <a href="#kontakt">Kontakt</a></span>
     </div>
@@ -824,10 +718,10 @@ em{font-style:normal;background:var(--yellow);padding:0 4px;border-radius:2px;co
       if((t>=8*60 && t<12*60) || (t>=13*60 && t<16*60)) open = true;
     }
     if(open){
-      txt.textContent = 'Wir haben gerade geöffnet · Anruf willkommen';
+      txt.textContent = 'Geöffnet · Anruf willkommen';
     } else {
       el.classList.add('is-closed');
-      txt.textContent = 'Aktuell geschlossen · Nachricht hinterlassen, wir rufen zurück';
+      txt.textContent = 'Geschlossen · bitte Nachricht hinterlassen';
     }
   })();
 </script>
