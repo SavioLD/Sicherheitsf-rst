@@ -274,6 +274,48 @@ strong{font-weight:700}
   .footer__top{grid-template-columns:1fr;gap:36px;padding:64px 0 40px}
   .hero__cta{gap:14px}
   .stripe__inner{flex-direction:column;align-items:flex-start}
+  .modal__card{padding:36px 28px}
+}
+
+/* ===== MODAL CONTACT FORM ===== */
+.modal{position:fixed;inset:0;z-index:100;display:none;align-items:center;justify-content:center;padding:24px}
+.modal.is-open{display:flex}
+.modal__backdrop{position:absolute;inset:0;background:rgba(10,10,10,.7);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);cursor:pointer}
+.modal__card{
+  position:relative;background:#fff;max-width:520px;width:100%;
+  padding:48px 44px;max-height:calc(100vh - 48px);overflow-y:auto;
+  animation:modalIn .25s cubic-bezier(.2,.8,.2,1);
+}
+@keyframes modalIn{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+.modal__close{
+  position:absolute;top:18px;right:18px;width:40px;height:40px;
+  background:transparent;border:0;cursor:pointer;display:grid;place-items:center;
+  color:var(--ink);font-size:1.6rem;line-height:1;
+}
+.modal__close:hover{background:var(--yellow)}
+.modal__bar{width:48px;height:4px;background:var(--yellow);margin-bottom:18px}
+.modal__card h3{font-size:1.6rem;margin:0 0 10px;letter-spacing:-.02em}
+.modal__card p.lead{color:var(--muted);margin:0 0 28px;font-size:.98rem}
+.form{display:grid;gap:14px}
+.form__row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.form label{display:block;font-size:.74rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+.form input,.form textarea{
+  width:100%;padding:13px 0;border:0;border-bottom:2px solid var(--line);
+  font-family:inherit;font-size:1rem;color:var(--ink);background:transparent;
+  outline:none;transition:border-color .15s ease;
+}
+.form input:focus,.form textarea:focus{border-bottom-color:var(--yellow)}
+.form input::placeholder,.form textarea::placeholder{color:var(--muted-2)}
+.form textarea{resize:vertical;min-height:60px}
+.form__consent{display:flex;align-items:flex-start;gap:10px;font-size:.86rem;color:var(--muted);margin-top:8px;line-height:1.5}
+.form__consent input{width:18px;height:18px;margin-top:2px;flex:0 0 auto;border:2px solid var(--ink);padding:0;accent-color:#0a0a0a}
+.form__consent a{color:var(--ink);text-decoration:underline;text-decoration-color:var(--yellow);text-decoration-thickness:2px}
+.form__submit{margin-top:8px;width:100%}
+.form__status{margin:14px 0 0;padding:14px 16px;font-size:.92rem;font-weight:600;display:none}
+.form__status.is-ok{display:block;background:var(--yellow);color:var(--ink)}
+.form__status.is-err{display:block;background:var(--ink);color:#fff}
+@media (max-width:520px){
+  .form__row{grid-template-columns:1fr}
 }
 </style>
 </head>
@@ -283,7 +325,7 @@ strong{font-weight:700}
 <header class="nav">
   <div class="shell nav__top">
     <a href="#top" aria-label="Fürst Metallbau – Startseite" style="display:flex;align-items:center">
-      <img class="logo" src="assets/logo.png" alt="Fürst Metallbau" />
+      <img class="logo" src="data:image/jpeg;base64,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" alt="Fürst Metallbau" />
     </a>
     <nav class="nav__links" aria-label="Hauptnavigation">
       <a href="#top" class="is-active">Willkommen</a>
@@ -317,10 +359,10 @@ strong{font-weight:700}
         Karl-Georg Fürst Metallbau aus Rottweil. <strong>Wohlgefühl für Sie</strong> — gewerbliche und private Komplettlösungen. Schließanlagen, Geländer, Treppen, Tore, Türen und Edelstahl. Beratung, Werkstatt und Montage aus einer Hand.
       </p>
       <div class="hero__cta">
-        <a href="#kontakt" class="btn btn--dark btn--lg">
+        <button type="button" class="btn btn--dark btn--lg" data-open-modal>
           Sicherheits-Check anfragen
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
-        </a>
+        </button>
         <a href="#loesungen" class="btn btn--text">
           Lösungen ansehen
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
@@ -343,10 +385,10 @@ strong{font-weight:700}
         Ihre <em>Sicherheit</em> zu gewährleisten<br/>
         ist unsere größte <em>Leidenschaft</em>.
       </div>
-      <a href="#kontakt" class="btn btn--dark stripe__cta">
+      <button type="button" class="btn btn--dark stripe__cta" data-open-modal>
         Kostenloser Sicherheits-Check
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
-      </a>
+      </button>
     </div>
   </section>
 
@@ -393,7 +435,7 @@ strong{font-weight:700}
         <article class="service">
           <div class="service__num">06 · Service</div>
           <h3>Wartung, Reparatur, Renovierung</h3>
-          <p>Quietschende Tore, klemmende Türen, defekte Schlösser — wir bringen Bestand wieder in Form.</p>
+          <p>Fachgerechte Instandhaltung Ihrer Schlösser, Türen, Tore und Metallbau-Konstruktionen. Wir prüfen, justieren und reparieren bestehende Anlagen — für dauerhafte Funktion und langfristigen Werterhalt.</p>
         </article>
       </div>
     </div>
@@ -654,7 +696,7 @@ strong{font-weight:700}
   <div class="shell">
     <div class="footer__top">
       <div class="footer__brand">
-        <img class="logo logo--md" src="assets/logo.png" alt="Fürst Metallbau" style="margin-bottom:24px" />
+        <img class="logo logo--md" src="data:image/jpeg;base64,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" alt="Fürst Metallbau" style="margin-bottom:24px" />
         <p>Seit 1953 Metall- und Edelstahlbau für Wohn- und Gewerbesicherheit. Familienbetrieb in zweiter Generation aus Rottweil.</p>
       </div>
       <div>
@@ -694,6 +736,65 @@ strong{font-weight:700}
   </div>
 </footer>
 
+<!-- ============ KONTAKT-MODAL ============ -->
+<div class="modal" id="contactModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" hidden>
+  <div class="modal__backdrop" data-close></div>
+  <div class="modal__card">
+    <button class="modal__close" type="button" data-close aria-label="Schließen">×</button>
+    <div class="modal__bar"></div>
+    <h3 id="modalTitle">Kostenloser Sicherheitscheck</h3>
+    <p class="lead">Hinterlassen Sie uns kurz Ihre Daten — wir melden uns persönlich werktags innerhalb von 24 Stunden bei Ihnen zurück.</p>
+
+    <form class="form" id="contactForm"
+          action="https://formsubmit.co/info@sicherheitsfuerst.de"
+          method="POST">
+      <!-- FormSubmit Steuerfelder -->
+      <input type="hidden" name="_subject" value="Neue Anfrage über sicherheitsfuerst.de" />
+      <input type="hidden" name="_template" value="table" />
+      <input type="hidden" name="_captcha" value="false" />
+      <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
+
+      <div class="form__row">
+        <div>
+          <label for="f_name">Name *</label>
+          <input id="f_name" name="Name" type="text" required autocomplete="name" placeholder="Max Mustermann" />
+        </div>
+        <div>
+          <label for="f_phone">Telefon *</label>
+          <input id="f_phone" name="Telefon" type="tel" required autocomplete="tel" placeholder="0741 …" />
+        </div>
+      </div>
+
+      <div>
+        <label for="f_email">E-Mail *</label>
+        <input id="f_email" name="E-Mail" type="email" required autocomplete="email" placeholder="ihre@email.de" />
+      </div>
+
+      <div>
+        <label for="f_topic">Worum geht es?</label>
+        <input id="f_topic" name="Anliegen" type="text" placeholder="z. B. Schließanlage, Geländer, Einbruchschutz" />
+      </div>
+
+      <div>
+        <label for="f_msg">Nachricht (optional)</label>
+        <textarea id="f_msg" name="Nachricht" rows="3" placeholder="Kurze Beschreibung Ihres Anliegens"></textarea>
+      </div>
+
+      <label class="form__consent">
+        <input type="checkbox" name="Datenschutz" required />
+        <span>Ich bin mit der Verarbeitung meiner Daten zur Bearbeitung der Anfrage einverstanden. Hinweise: <a href="#impressum">Impressum</a>.</span>
+      </label>
+
+      <button type="submit" class="btn btn--dark btn--lg form__submit">
+        Anfrage absenden
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </button>
+
+      <div class="form__status" id="formStatus" role="status" aria-live="polite"></div>
+    </form>
+  </div>
+</div>
+
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
 
@@ -715,6 +816,60 @@ strong{font-weight:700}
       el.classList.add('is-closed');
       txt.textContent = 'Geschlossen · bitte Nachricht hinterlassen';
     }
+  })();
+
+  /* ===== Modal open/close + AJAX submit ===== */
+  (function(){
+    const modal = document.getElementById('contactModal');
+    if(!modal) return;
+    const form = document.getElementById('contactForm');
+    const status = document.getElementById('formStatus');
+
+    function open(){
+      modal.hidden = false;
+      modal.classList.add('is-open');
+      document.body.style.overflow = 'hidden';
+      setTimeout(() => modal.querySelector('input')?.focus(), 50);
+    }
+    function close(){
+      modal.classList.remove('is-open');
+      modal.hidden = true;
+      document.body.style.overflow = '';
+    }
+
+    document.querySelectorAll('[data-open-modal]').forEach(btn => {
+      btn.addEventListener('click', e => { e.preventDefault(); open(); });
+    });
+    modal.querySelectorAll('[data-close]').forEach(el => {
+      el.addEventListener('click', close);
+    });
+    document.addEventListener('keydown', e => {
+      if(e.key === 'Escape' && modal.classList.contains('is-open')) close();
+    });
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      status.className = 'form__status';
+      status.textContent = '';
+      const data = new FormData(form);
+      try {
+        const res = await fetch(form.action, {
+          method: 'POST',
+          body: data,
+          headers: { 'Accept': 'application/json' }
+        });
+        if(res.ok){
+          status.classList.add('is-ok');
+          status.textContent = 'Vielen Dank — Ihre Anfrage ist bei uns. Wir melden uns innerhalb von 24 Stunden zurück.';
+          form.reset();
+        } else {
+          throw new Error('Submit failed');
+        }
+      } catch(err){
+        status.classList.add('is-err');
+        status.innerHTML = 'Die Anfrage konnte nicht gesendet werden. Bitte rufen Sie uns kurz an: <a href="tel:+4974153230" style="color:#ffe000;text-decoration:underline">0741 53 23‑0</a>';
+      }
+    });
   })();
 </script>
 </body>
