@@ -9,7 +9,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Archivo:wght@500;600;700;800;900&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Archivo:wght@500;600;700;800;900&family=Permanent+Marker&display=swap" rel="stylesheet" />
 
 <style>
 :root{
@@ -68,11 +68,10 @@ strong{font-weight:700}
 .btn--text:hover::after{width:100%}
 .btn--lg{padding:18px 32px;font-size:.92rem}
 
-/* ===== Logo (text-only with thin yellow underline) ===== */
-.logo{display:inline-flex;flex-direction:column;align-items:flex-start;line-height:1}
-.logo__main{font-family:'Archivo',sans-serif;font-weight:900;font-style:italic;font-size:1.6rem;letter-spacing:-.02em;color:var(--ink)}
-.logo__bar{width:100%;height:3px;background:var(--yellow);margin:4px 0 3px}
-.logo__sub{font-family:'Archivo',sans-serif;font-weight:700;font-size:.62rem;letter-spacing:.32em;color:var(--ink)}
+/* ===== Logo (square mark, brand identity) ===== */
+.logo{display:block;width:60px;height:60px;flex:0 0 auto}
+.logo--md{width:72px;height:72px}
+.logo__svg{display:block;width:100%;height:100%}
 
 /* ===== NAV ===== */
 .nav{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid var(--line)}
@@ -281,13 +280,27 @@ strong{font-weight:700}
 </head>
 <body>
 
+<!-- ============ INLINE LOGO TEMPLATE ============ -->
+<svg width="0" height="0" style="position:absolute;overflow:hidden" aria-hidden="true">
+  <defs>
+    <symbol id="logoFuerst" viewBox="0 0 200 200">
+      <rect width="200" height="200" rx="6" fill="#2a2828"/>
+      <text x="100" y="118" text-anchor="middle"
+            font-family="'Permanent Marker', 'Marker Felt', cursive"
+            font-size="92" fill="#ffe000" letter-spacing="-3">fürst</text>
+      <rect x="38" y="140" width="124" height="3" fill="#ffe000"/>
+      <text x="100" y="170" text-anchor="middle"
+            font-family="'Archivo', sans-serif" font-weight="700"
+            font-size="20" fill="#ffe000" letter-spacing="5.5">METALLBAU</text>
+    </symbol>
+  </defs>
+</svg>
+
 <!-- ============ NAV ============ -->
 <header class="nav">
   <div class="shell nav__top">
-    <a href="#top" class="logo" aria-label="Fürst Metallbau – Startseite">
-      <span class="logo__main">fürst</span>
-      <span class="logo__bar"></span>
-      <span class="logo__sub">METALLBAU</span>
+    <a href="#top" aria-label="Fürst Metallbau – Startseite" style="display:flex;align-items:center">
+      <svg class="logo"><use href="#logoFuerst"/></svg>
     </a>
     <nav class="nav__links" aria-label="Hauptnavigation">
       <a href="#top" class="is-active">Willkommen</a>
@@ -658,11 +671,7 @@ strong{font-weight:700}
   <div class="shell">
     <div class="footer__top">
       <div class="footer__brand">
-        <span class="logo">
-          <span class="logo__main">fürst</span>
-          <span class="logo__bar"></span>
-          <span class="logo__sub">METALLBAU</span>
-        </span>
+        <svg class="logo logo--md" style="margin-bottom:24px"><use href="#logoFuerst"/></svg>
         <p>Seit 1953 Metall- und Edelstahlbau für Wohn- und Gewerbesicherheit. Familienbetrieb in zweiter Generation aus Rottweil.</p>
       </div>
       <div>
